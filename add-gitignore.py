@@ -9,7 +9,7 @@ import os.path as op
 
 ds = sys.argv[1]
 
-filepath = op.join(ds.path, .gitignore)
+filepath = op.join(ds.path, '.gitignore')
 
 ignorecontent = """\
 # History files
