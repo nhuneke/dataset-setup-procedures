@@ -6,6 +6,7 @@ Procedure to add README template
 
 import sys
 import os.path as op
+import re
 from datalad.distribution.dataset import require_dataset
 
 ds = require_dataset(
@@ -13,18 +14,35 @@ ds = require_dataset(
 	check_installed=True,
 	purpose="Add README")
 
+# Get dataset id (pythonised GREP)	
+with open('.datalad/config', "r") as conf:
+	for line in conf:
+		if re.search('id = ', line):
+			id = line
+
 readmecontent = """\
 # [Replace with Title of Dataset]
 
 ## General information
 
-This is a DataLad dataset (id: 1c39208d-477e-4dd7-8d05-882bcdf0907a). Include 
+This is a DataLad dataset ({}). Include 
 an overall summary of the dataset here, e.g. This dataset contains x data for n
 participants who completed a, b, c tasks.
 
 ## References and Links
 
 Include references to publications or other relevant links (e.g. OSF projects) here.
+
+## Dataset Content
+
+### Data
+
+Describe what and where the data are.
+
+### Code
+- All custom code is located in `code/`.
+- Describe contents briefly.
+- An accompanying README is present in the `code/` folder.
 
 ## DataLad datasets and how to use them
 
@@ -95,18 +113,7 @@ DataLad datasets contain their history in the ``git log``.  By running ``git
 log`` (or a tool that displays Git history) in the dataset or on specific
 files, you can find out what has been done to the dataset or to individual
 files by whom, and when.
-
-## Dataset Content
-
-### Data
-
-Describe what and where the data are.
-
-### Code
-- All custom code is located in `code/`.
-- Describe contents briefly.
-- An accompanying README is present in the `code/` folder.
-"""
+""".format(id)
 
 file = 'README.md'
 open(file, 'a').close()
