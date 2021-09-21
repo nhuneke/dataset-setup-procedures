@@ -9,10 +9,6 @@ import os.path as op
 
 ds = sys.argv[1]
 
-print(ds)
-
-filepath = op.join(ds.path, '.gitignore')
-
 ignorecontent = """\
 # History files
 .Rhistory
@@ -42,7 +38,7 @@ ignorecontent = """\
 tmp_dcm2bids/
 """
 
-file = open(filepath, 'w+')
+file = open(op.join(ds.path, '.gitignore'), 'w+')
 file.writelines(ignorecontent)
 file.close
 
