@@ -38,8 +38,11 @@ ignorecontent = """\
 tmp_dcm2bids/
 """
 
-file = open(op.join(ds.path, '.gitignore'), 'w+')
+file = '.gitignore'
+open(file, 'a').close()
+
+open(file, 'w+')
 file.writelines(ignorecontent)
-file.close
+file.close()
 
 ds.save(message="Apply add .gitignore procedure")
