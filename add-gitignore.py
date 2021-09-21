@@ -41,8 +41,8 @@ tmp_dcm2bids/
 file = '.gitignore'
 open(file, 'a').close()
 
-open(file, 'w+')
-file.writelines(ignorecontent)
-file.close()
+with open(file, 'w') as f:
+	f.write(ignorecontent)
+	f.close()
 
 ds.save(message="Apply add .gitignore procedure")
