@@ -9,6 +9,8 @@ import os.path as op
 
 ds = sys.argv[1]
 
+print(ds)
+
 filepath = op.join(ds.path, '.gitignore')
 
 ignorecontent = """\
