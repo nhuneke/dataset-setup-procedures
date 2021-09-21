@@ -6,8 +6,12 @@ Procedure to add .gitignore template
 
 import sys
 import os.path as op
+from datalad.distribution.dataset import require_dataset
 
-ds = sys.argv[1]
+ds = require_dataset(
+	sys.argv[1],
+	check_installed=True,
+	purpose="Add gitignore")
 
 ignorecontent = """\
 # History files
