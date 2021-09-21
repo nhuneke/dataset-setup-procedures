@@ -45,21 +45,27 @@ Software required to run:
 JSON file describing configuration for `dcm2bids`.
 """
 
-file = op.join(codepath, 'README.md')
-open(file, 'a').close()  # create README
 attributes = op.join(codepath, '.gitattributes')
 open(attributes, 'a').close()  # create .gitattributes
 
+# instruct annex to ignore files in directory
+with open(attributes, 'a+') as attrs:
+	attrs.write('* annex.largefiles=nothing\n')  
+	attrs.close()
+	
+ds.save(
+	attributes,
+	)
+
+file = op.join(codepath, 'README.md')
+open(file, 'a').close()  # create README
+
+# write README
 with open(file, 'w') as f:
 	f.write(readmecontent)
 	f.close()
-	
-with open(attributes, 'a+') as attrs:
-	attrs.write('* annex.largefiles=nothing\n')
-	attrs.close()
 
 ds.save(
-	attributes,
 	file,
-	message="Add code directory",
+	message = "Add code directory"
 	)
