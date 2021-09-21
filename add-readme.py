@@ -121,5 +121,14 @@ open(file, 'a').close()
 with open(file, 'w') as f:
 	f.write(readmecontent)
 	f.close()
+	
+with open('.gitattributes', 'a+') as attrs:
+	attrs.write('README.md annex.largefiles=nothing\n')
+	attrs.close()
+	
+git_attributes_file = op.join(ds.path, '.gitattributes')
 
-ds.save(message="Add README template")
+ds.save(
+	git_attributes_file,
+	message="Add README template",
+	)
