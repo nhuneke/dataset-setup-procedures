@@ -115,20 +115,19 @@ files, you can find out what has been done to the dataset or to individual
 files by whom, and when.
 """.format(id)
 
+with open('.gitattributes', 'a+') as attrs:
+	attrs.write('README.md annex.largefiles=nothing\n')
+	attrs.close()
+	
+ds.save()
+
 file = 'README.md'
 open(file, 'a').close()
 
 with open(file, 'w') as f:
 	f.write(readmecontent)
 	f.close()
-	
-with open('.gitattributes', 'a+') as attrs:
-	attrs.write('README.md annex.largefiles=nothing\n')
-	attrs.close()
-	
-git_attributes_file = op.join(ds.path, '.gitattributes')
 
 ds.save(
-	git_attributes_file,
 	message="Add README template",
 	)
