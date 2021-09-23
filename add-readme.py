@@ -23,13 +23,28 @@ with open('.datalad/config', "r") as conf:
 readmecontent = """\
 # [Replace with Title of Dataset]
 
+Dataset DOI: 
+
 ## General information
 
-This is a DataLad dataset ({}). Include 
-an overall summary of the dataset here, e.g. This dataset contains x data for n
+This is a DataLad dataset ({}). 
+
+README Author: YOUR NAME, University of Southampton [ORCID ID]
+
+Date of data collection: ADD IN COLLECTION DATES
+
+Include an overall summary of the dataset here, e.g. This dataset contains x data for n
 participants who completed a, b, c tasks.
 
+## Sharing/Access Information
+
+License: CC-BY 4.0 [Include any other limitations of reuse]
+
+Recommended citation for the data:
+
 ## References and Links
+
+This dataset supports the publication:
 
 Include references to publications or other relevant links (e.g. OSF projects) here.
 
@@ -37,7 +52,10 @@ Include references to publications or other relevant links (e.g. OSF projects) h
 
 ### Data
 
-Describe what and where the data are.
+Describe what and where the data are. Do this for each file.
+
+Any meta-data for the data? Either say where it is or include the meta-data here (e.g.
+define abbreviations, units of measure, codes, etc.)
 
 ### Code
 - All custom code is located in `code/`.
