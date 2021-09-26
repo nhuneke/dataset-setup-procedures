@@ -1,6 +1,7 @@
 #!/bin/bash
 
-# Include RIA backup and gitlab siblings here
+# Procedure to create RIA-backup and GitLab siblings. 
+# If these siblings already exist then they are skipped. 
 
 set -e -u
 
