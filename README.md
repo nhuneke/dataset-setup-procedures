@@ -59,13 +59,13 @@ Each procedure can be run individually or as a group.
 Before running this procedure the user needs to do some set up. 
 1. You will need a GitLab account. This procedure is currently configured to use the University of Southampton's [GitLab instance](https://git.soton.ac.uk) 
 2. `python-gitlab` needs to be installed with `conda install -c conda-forge python-gitlab`
-3. You will need to generate a personal access token for GitLab and define this in a `python-gitlab` config file. (Link to instructions for token here) 
+3. You will need to generate a personal access token for GitLab [here](https://git.soton.ac.uk/-/profile/personal_access_tokens), and define this in a `python-gitlab` config file.  
 
 Copy and paste the following into a text file, inserting your personal access token in the appropriate field:
 
 	[soton] 
-		url = https://git.soton.ac.uk
-		private_token = [insert token here] 
+	url = https://git.soton.ac.uk
+	private_token = [insert token here] 
 		
 Save this in your `home` directory (`~`) as `.python-gitlab.cfg`
 
