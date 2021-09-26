@@ -33,7 +33,7 @@ cd new-dataset
 3. Clone this repository into `.datalad/procedures`
 
 ```
-datalad clone -d . https://moo .datalad/procedures
+datalad clone -d . https://github.com/nhuneke/dataset-setup-procedures .datalad/procedures
 ```
 
 4. Check installation was successful 
