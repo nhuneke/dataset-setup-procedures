@@ -43,7 +43,12 @@ datalad run-procedure --discover
 ```
 This should produce the following output
 ```
-TO FILL
+setup (/Users/user1/new-dataset/.datalad/procedures/setup.sh) [executable]
+add-licenses (/Users/user1/new-dataset/.datalad/procedures/add-licenses.py) [executable]
+add-code (/Users/user1/new-dataset/.datalad/procedures/add-code.py) [executable]
+backup (/Users/user1/new-dataset/.datalad/procedures/backup.sh) [bash_script]
+add-gitignore (/Users/user1/new-dataset/.datalad/procedures/add-gitignore.py) [python_script]
+add-readme (/Users/user1/new-dataset/.datalad/procedures/add-readme.py) [executable]
 ```
 
 ## Usage
@@ -53,8 +58,6 @@ Each procedure can be run individually or as a group.
 ### Running Individually 
 
 #### Backup
-
-##### Set up
 
 Before running this procedure the user needs to do some set up. 
 1. You will need a GitLab account. This procedure is currently configured to use the University of Southampton's [GitLab instance](https://git.soton.ac.uk) 
@@ -68,8 +71,6 @@ Copy and paste the following into a text file, inserting your personal access to
 	private_token = [insert token here] 
 		
 Save this in your `home` directory (`~`) as `.python-gitlab.cfg`
-
-##### Run the procedure 
 
 Once you have completed the above set up, run the procedure from within your dataset with:
 
