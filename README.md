@@ -138,4 +138,18 @@ If you plan to share your dataset, code, or both, and these licenses are appropr
 datalad run-procedure add-licenses
 ```
 
+## Contributing
 
+Contributions welcome. Please use the following procedure:
+
+1. On GitHub, fork a copy of this repository into your userspace
+2. Install that copy locally using
+```
+datalad clone <https://github.com/url/of/fork.git>
+```
+3. Make changes. Save changes and push the branch to your fork
+```
+datalad save -m '<message>'
+datalad push --to origin
+```
+4. Send a pull request
