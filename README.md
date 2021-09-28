@@ -1,6 +1,6 @@
 # Dataset Setup Procedures
 
-This repository is a DataLad dataset containing procedures for setting up a dataset. 
+This repository is a DataLad dataset containing procedures for setting up a DataLad dataset. 
 
 There are procedures to:
 
@@ -13,8 +13,20 @@ There are procedures to:
 ## Installation 
 
 ### Requirements
-- [DataLad](https://anaconda.org/conda-forge/datalad) 
-- [python-gitlab](https://python-gitlab.readthedocs.io/en/stable/install.html) 
+- DataLad - [installation instructions](https://anaconda.org/conda-forge/datalad) 
+- python-gitlab - [installation instructions](https://python-gitlab.readthedocs.io/en/stable/install.html)
+
+Please go through the following steps to set your machine up to run the procedures:
+1. Create a GitLab account. These procedures are currently configured to use the University of Southampton's [GitLab instance](https://git.soton.ac.uk) 
+2. You will need to generate a personal access token for GitLab [here](https://git.soton.ac.uk/-/profile/personal_access_tokens).
+3. Create a `python-gitlab config file`. Copy and paste the following into a text file, inserting your personal access token in the appropriate field:
+
+```
+[soton] 
+url = https://git.soton.ac.uk
+private_token = [insert token here] 
+```		
+4. Save this file in your `home` directory (`~`) as `.python-gitlab.cfg`
 
 ### Installing the procedures
 
@@ -41,7 +53,9 @@ datalad clone -d . https://github.com/nhuneke/dataset-setup-procedures .datalad/
 ```
 datalad run-procedure --discover
 ```
-This should produce the following output
+
+This should produce the following output:
+
 ```
 setup (/Users/user1/new-dataset/.datalad/procedures/setup.sh) [executable]
 add-licenses (/Users/user1/new-dataset/.datalad/procedures/add-licenses.py) [executable]
@@ -53,26 +67,13 @@ add-readme (/Users/user1/new-dataset/.datalad/procedures/add-readme.py) [executa
 
 ## Usage
 
-Each procedure can be run individually or as a group.
+Each procedure can be run individually to complete a specific task, or as a group for initial set up of a new dataset.
 
-### Running Individually 
+### Backup
 
-#### Backup
+This procedure creates a remote indexed archive (RIA) backup and associated GitLab sibling. Before running this procedure ensure you have completed the [setup as above](#requirements). 
 
-Before running this procedure the user needs to do some set up. 
-1. You will need a GitLab account. This procedure is currently configured to use the University of Southampton's [GitLab instance](https://git.soton.ac.uk) 
-2. `python-gitlab` needs to be installed with `conda install -c conda-forge python-gitlab`
-3. You will need to generate a personal access token for GitLab [here](https://git.soton.ac.uk/-/profile/personal_access_tokens), and define this in a `python-gitlab` config file.  
-
-Copy and paste the following into a text file, inserting your personal access token in the appropriate field:
-
-	[soton] 
-	url = https://git.soton.ac.uk
-	private_token = [insert token here] 
-		
-Save this in your `home` directory (`~`) as `.python-gitlab.cfg`
-
-Once you have completed the above set up, run the procedure from within your dataset with:
+Run the procedure from within your dataset with:
 
 ```
 datalad run-procedure backup
@@ -94,7 +95,7 @@ datalad push --to gitlab
 
 your dataset will be backed up to both the RIA and GitLab siblings. 
 
-#### Add README
+### Add README
 
 This procedure adds a `README` template to your dataset. From within your dataset, run
 
@@ -102,7 +103,7 @@ This procedure adds a `README` template to your dataset. From within your datase
 datalad run-procedure add-readme
 ```
 
-#### Add gitignore
+### Add gitignore
 
 This procedure adds a `.gitignore` template to your dataset. From within your dataset, run
 
@@ -110,7 +111,7 @@ This procedure adds a `.gitignore` template to your dataset. From within your da
 datalad run-procedure add-gitignore
 ```
 
-#### Add code directory
+### Add code directory
 
 This procedure adds a `/code` directory with an accompanying `README` template and instructs the annex to send all contents of `/code` to git. From within your dataset, run
 
@@ -128,9 +129,9 @@ datalad run-procedure setup
 
 ### Add Licenses
 
-This procedure is not included in the initial setup group as not all datasets will be shared and so need a license. Further, the licenses included might not be appropriate. 
+This procedure is not included in the initial setup group as not all datasets will be shared and so need a license. Further, the licenses chosen for this procedure might not be appropriate for all datasets. 
 
-This procedure adds a `LICENSE` file to the main dataset and to the `/code` folder. It adds a `CC-BY 4.0` license for the dataset and a `MIT` license for the code. 
+This procedure adds a `CC-BY 4.0` license to the dataset and an `MIT` license to the code directory in the form of a `LICENSE` file. 
 
 If you plan to share your dataset, code, or both, and these licenses are appropriate, then from within your dataset, run
 
