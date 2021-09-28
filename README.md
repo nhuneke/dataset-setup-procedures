@@ -14,7 +14,7 @@ There are procedures to:
 
 ### Requirements
 - DataLad - [installation instructions](https://anaconda.org/conda-forge/datalad) 
-- python-gitlab - [installation instructions](https://python-gitlab.readthedocs.io/en/stable/install.html)
+- python-gitlab - [installation instructions](https://anaconda.org/conda-forge/python-gitlab)
 
 Please go through the following steps to set your machine up to run the procedures:
 1. Create a GitLab account. These procedures are currently configured to use the University of Southampton's [GitLab instance](https://git.soton.ac.uk) 
