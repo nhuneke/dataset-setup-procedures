@@ -27,7 +27,7 @@ Dataset DOI:
 
 ## General information
 
-This is a DataLad dataset ({}). 
+This is a [DataLad dataset](#datalad-datasets-and-how-to-use-them) ({}). 
 
 README Author: YOUR NAME, University of Southampton [ORCID ID]
 
@@ -72,7 +72,7 @@ command line tool, available for all major operating systems, and builds up on
 Git and [git-annex](https://git-annex.branchable.com/) to allow sharing,
 synchronizing, and version controlling collections of large files.
 
-More information on how to install DataLad and [how to install](http://handbook.datalad.org/en/latest/intro/installation.html)
+More information on DataLad and [how to install](http://handbook.datalad.org/en/latest/intro/installation.html)
 it can be found in the [DataLad Handbook](https://handbook.datalad.org/en/latest/index.html).
 
 ### Get the dataset
