@@ -134,7 +134,7 @@ files by whom, and when.
 """.format(id)
 
 with open('.gitattributes', 'a+') as attrs:
-	attrs.write('README.md annex.largefiles=nothing\n')
+	attrs.write('\nREADME.md annex.largefiles=nothing\n')
 	attrs.close()
 	
 ds.save()
