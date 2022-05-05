@@ -11,7 +11,7 @@ echo "Please enter the URL for the RIA backup sibling e.g."
 echo "ssh://ssh.soton.ac.uk:/research/datasets/"
 read -p 'URL for RIA backup: ' riaurl
 
-datalad create-sibling-ria -s ria-backup --existing skip ria+$riaurl
+datalad create-sibling-ria -s ria-backup --new-store-ok --existing skip ria+$riaurl
 
 echo "Creating gitlab sibling..."
 echo
