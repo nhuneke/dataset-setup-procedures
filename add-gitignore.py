@@ -40,6 +40,10 @@ ignorecontent = """\
 
 # Temporary directory created by dcm2bids
 tmp_dcm2bids/
+
+# DS_Store
+.DS_Store
+*/.DS_Store
 """
 
 file = '.gitignore'
